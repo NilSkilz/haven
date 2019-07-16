@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Checkbox from '../components/forms/Checkbox';
 import Axios from 'axios';
 
-class TileMultiSwitch extends Component {
+class TileSingleSwitch extends Component {
   state = { value: 'on' };
 
   //	Delegates
@@ -49,7 +49,7 @@ class TileMultiSwitch extends Component {
               const e = this.props.entities[entity];
               if (!e) return null;
               return (
-                <div className='simple-control--row'>
+                <div className='simple-control--row' key={e.entity_id}>
                   <Checkbox
                     {...{
                       id: e.entity_id,
@@ -86,4 +86,4 @@ const mapStateToProps = state => {
 
 const componentConnector = connect(mapStateToProps);
 
-export default componentConnector(TileMultiSwitch);
+export default componentConnector(TileSingleSwitch);

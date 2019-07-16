@@ -68,13 +68,10 @@ class App extends Component {
   //	Load JSON Config File
   //--------------------------------------------------------//
   loadData = () => {
-    console.log('fetching...');
     fetch('./haven.json')
       .then(response => response.text())
       .then(json => {
         const config = JSON.parse(json);
-        console.log(config);
-
         const action = {
           type: 'UPDATE_CONFIG',
           config
@@ -216,7 +213,7 @@ class App extends Component {
             </section>
             {this.state.haven ? (
               <Websocket
-                url={`${this.state.haven.homeAssistantAddress.replace('https', 'wss')}/api/websocket/`}
+                url={`${this.state.haven.homeAssistantAddress.replace('https', 'wss')}/api/websocket`}
                 onMessage={this.wsData}
                 reconnect={true}
                 debug={true}

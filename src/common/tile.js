@@ -26,7 +26,6 @@ class TileFunctions {
           Axios.get(`${this.config.homeAssistantAddress}/api/states/${entity}`)
             .then(response => {
               array.push(response.data);
-              console.log('Got:', response.data.entity_id);
               cb();
             })
             .catch(err => {

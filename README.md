@@ -2,6 +2,8 @@
 
 A modular UI for Home Assistant
 
+![alt text](https://github.com/NilSkilz/haven/tree/master/src/assets/images/mockup.png)
+
 ## Intro
 
 Haven was designed to be run on a wallmounted tablet device, and provide a simple but stylish interface with Home Assistant entities.

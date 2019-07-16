@@ -327,7 +327,7 @@ input.apple-switch {
   outline: none;
   width: 50px;
   height: 30px;
-  background-color: #202020;
+  background-color: #fff;
   border: 1px solid #555;
   border-radius: 50px;
   box-shadow: inset -20px 0 0 0 #555;
@@ -345,8 +345,8 @@ input.apple-switch:after {
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
 }
 input.apple-switch:checked {
-  border-color: #ccc;
-  box-shadow: inset 20px 0 0 0 #ccc;
+  border-color: #9bf7ab;
+  box-shadow: inset 20px 0 0 0 #9bf7ab;
 }
 input.apple-switch:checked:after {
   left: 20px;

@@ -21,18 +21,19 @@ class ConfigureModal extends Component {
   state = { ...this.props, entities: null };
 
   componentDidMount = () => {
-    Axios.get(`${this.props.config.homeAssistantAddress}/api/states/`)
-      .then(response => response.json())
-      .then(json => {
-        const entities = [];
-        json.map(entity => {
-          return entities.push(entity.entity_id);
+    setTimeout(() => {
+      Axios.get(`${this.props.config.homeAssistantAddress}/api/states`)
+        .then(({ data }) => {
+          const entities = [];
+          data.map(entity => {
+            return entities.push(entity.entity_id);
+          });
+          this.setState({ entities });
+        })
+        .catch(err => {
+          console.log(err);
         });
-        this.setState({ entities });
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    }, 1000);
   };
 
   componentWillReceiveProps = props => {
@@ -212,7 +213,8 @@ class ConfigureModal extends Component {
   };
 
   render() {
-    const { tile } = this.state;
+    const { tile, entities } = this.state;
+    if (!entities || entities.length < 1) return null;
     const form = this.generateForm();
 
     return tile ? (

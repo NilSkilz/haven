@@ -22,7 +22,6 @@ class TileIcon extends Component {
   componentDidMount = async () => {
     const tile = new TileFunctions(this.props.config);
     tile.fetchData(this.props.tile.entities).then(entities => {
-      console.log('ENTITIES', entities);
       entities.map(entity => this.props.dispatch({ type: 'SET_ENTITY', entity }));
     });
   };
