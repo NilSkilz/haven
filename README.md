@@ -1,3 +1,28 @@
+# Haven
+
+A modular UI for Home Assistant
+
+## Intro
+
+Haven was designed to be run on a wallmounted tablet device, and provide a simple but stylish interface with Home Assistant entities.
+
+### haven.json
+
+In order to communicate with Home Assistant you will need to create a long-lived access token which can be generated from your [Account Page](https://www.home-assistant.io/docs/authentication/) on Home Assistant.
+
+<b>Influx Graphs</b><br>
+Graphs are generated directly from Influx, and so this URL is required if you want some nice looking graphs in your UI.
+
+## Modules
+
+Each haven tile has a type, which in turn tells the code which module to load for that tile. The modules should allow for easy development by anyone who wants to create a custom tile. The tile javascript file is loaded into the modules folder, and a config is added to the haven.json file. This includes the schema for the configuration, where you can ask users for information required to configure the tile. <br><br>
+Hopefully this approach will allow others to contribute easily to the project.
+<br><br>
+More documentation will be written in future as this evolves...
+<br><br>
+<br><br>
+<br><br>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
