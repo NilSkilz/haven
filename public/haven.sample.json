@@ -1,0 +1,106 @@
+{
+  "haven": {
+    "homeAssistantAddress": "https://ha.domain.com",
+    "longLivedAccessToken": "TOKEN_GOES_HERE",
+    "influxAddress": "https://influxdb.domain.com",
+    "influxDB": "homeassistant",
+    "modules": [
+      {
+        "name": "Sensor Tile",
+        "file": "TileSensor",
+        "schema": [
+          {
+            "id": "entity",
+            "label": "Entity",
+            "description": "",
+            "type": "entity_select",
+            "multi": true
+          },
+          {
+            "id": "unitOfMeasurement",
+            "label": "Unit of Measurement",
+            "description": "By default, we will try and get the unit of measurement from the first entity. Use this field to override this value if required\n",
+            "type": "input",
+            "placeholder": "°C"
+          },
+          {
+            "id": "graph.visible",
+            "label": "Show Graph",
+            "description": "",
+            "type": "checkbox",
+            "default": false
+          },
+          {
+            "id": "graph.type",
+            "name": "Graph Type",
+            "description": "",
+            "type": "select",
+            "data": ["Line Graph"],
+            "dependancy": "graph.visible"
+          },
+          {
+            "id": "graph.colours.primary",
+            "label": "Primary Colour",
+            "description": "",
+            "type": "colorPicker",
+            "default": "EEF85B"
+          },
+          {
+            "id": "graph.colours.secondary",
+            "label": "Secondary Colour",
+            "description": "",
+            "type": "colorPicker",
+            "default": "09E5C3"
+          }
+        ]
+      },
+      {
+        "name": "Icon Tile",
+        "file": "TileIcon",
+        "schema": [
+          {
+            "id": "entity",
+            "label": "Entity",
+            "description": "",
+            "type": "entity_select",
+            "multi": true
+          },
+          {
+            "id": "unitOfMeasurement",
+            "label": "Unit of Measurement",
+            "description": "By default, we will try and get the unit of measurement from the first entity. Use this field to override this value if required\n",
+            "type": "input",
+            "placeholder": "°C"
+          },
+          {
+            "id": "icon.value",
+            "name": "Icon Type",
+            "description": "",
+            "type": "select",
+            "data": ["thermometer", "power", "bulb", "user", "lock", "TV", "motion"]
+          },
+          {
+            "id": "icon.visible",
+            "label": "Show Icon",
+            "description": "",
+            "type": "checkbox",
+            "default": true
+          }
+        ]
+      },
+      {
+        "name": "Switch Tile",
+        "file": "TileSingleSwitch",
+        "schema": [
+          {
+            "id": "entity",
+            "label": "Entity",
+            "description": "",
+            "type": "entity_select",
+            "multi": false
+          }
+        ]
+      }
+    ]
+  }
+}
