@@ -2,7 +2,7 @@
 
 A modular UI for Home Assistant
 
-![alt text](https://github.com/NilSkilz/haven/tree/master/src/assets/images/mockup.png)
+![image](https://github.com/NilSkilz/haven/blob/master/src/assets/images/mockup.png)
 
 ## Intro
 
